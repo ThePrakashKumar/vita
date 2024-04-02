@@ -10,6 +10,9 @@ if (!GITHUB_CLIENT_ID || !GITHUB_CLIENT_SECRET) {
   throw new Error("Missing Github OAuth Credentials");
 }
 
+// GET and POST will be called by the GtiHub
+// Prisma Adapter is saving the user data when new user login/singup
+
 export const {
   handlers: { GET, POST },
   auth,
@@ -34,5 +37,3 @@ export const {
     },
   },
 });
-
-console.log("handlers", GET);
