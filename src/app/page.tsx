@@ -1,8 +1,7 @@
 import { Button } from "@nextui-org/react";
-import { signIn } from "@/actions/signIn";
+import { signIn } from "@/actions";
 import { auth } from "@/auth";
 import Profile from "@/components/Profile";
-import { signOut } from "@/actions/signOut";
 
 export default async function Home() {
   const session = await auth();

@@ -1,4 +1,4 @@
-import { signOut } from "@/actions/signOut";
+import { signIn, signOut } from "@/actions";
 import { auth } from "@/auth";
 import {
   Navbar,
@@ -47,12 +47,19 @@ const Header = async () => {
             </Popover>
           ) : (
             <>
-              <Button color="primary" variant="bordered">
-                Sign Up
-              </Button>
-              <Button color="primary" variant="solid" className="ml-2">
-                Login
-              </Button>
+              <form action={signIn}>
+                <Button color="primary" variant="bordered" type="submit">
+                  Sign Up
+                </Button>
+                <Button
+                  color="primary"
+                  variant="solid"
+                  type="submit"
+                  className="ml-2"
+                >
+                  Login
+                </Button>
+              </form>
             </>
           )}
         </NavbarItem>
