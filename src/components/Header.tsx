@@ -8,7 +8,7 @@ import {
 } from "@nextui-org/react";
 import HeaderAuth from "./HeaderAuth";
 
-const Header = async () => {
+const Header = () => {
   return (
     <Navbar>
       <NavbarBrand>

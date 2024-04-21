@@ -2,7 +2,6 @@
 import {
   Avatar,
   Button,
-  NavbarContent,
   NavbarItem,
   Popover,
   PopoverContent,
@@ -11,9 +10,10 @@ import {
 import { signIn, signOut } from "@/actions";
 import { useSession } from "next-auth/react";
 
-const HeaderAuth = async () => {
-  const session = await useSession();
+const HeaderAuth = () => {
+  const session = useSession();
   const image = session.data?.user?.image || "";
+  if (session.status === "loading") return;
   return (
     <NavbarItem className="hidden lg:flex">
       {session.data?.user ? (
