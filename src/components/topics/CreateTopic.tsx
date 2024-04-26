@@ -9,6 +9,7 @@ import {
   Textarea,
 } from "@nextui-org/react";
 import { useFormState } from "react-dom";
+import FormButton from "../common/FormButton";
 
 const CreateTopic = () => {
   const [formState, action] = useFormState(createTopic, { errors: {} });
@@ -44,9 +45,7 @@ const CreateTopic = () => {
               {formState.errors._form.join(", ")}
             </div>
           )}
-          <Button type="submit" color="primary">
-            Submit
-          </Button>
+          <FormButton>Submit</FormButton>
         </form>
       </PopoverContent>
     </Popover>
