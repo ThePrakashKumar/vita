@@ -38,6 +38,7 @@ export async function createTopic(
     description,
   });
 
+  // if data does not full all requirements
   if (!result.success) {
     return {
       errors: result.error.flatten().fieldErrors as {
@@ -47,7 +48,7 @@ export async function createTopic(
     };
   }
 
-  // shoe error when user is not logged in
+  // show error when user is not logged in
   const session = await auth();
 
   if (!session || !session.user) {
