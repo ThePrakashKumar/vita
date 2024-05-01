@@ -1,12 +1,12 @@
 import { db } from "@/db";
 import { Chip } from "@nextui-org/react";
 import Link from "next/link";
-import path from "@/paths";
+import paths from "@/paths";
 
 const TopicList = async () => {
   const topics = await db.topic.findMany();
   const renderedTopicList = topics.map((topic) => (
-    <Link href={path.topicShow(topic.slug)}>
+    <Link href={paths.topicShow(topic.slug)}>
       <Chip color="default" variant="shadow">
         {topic.slug}
       </Chip>

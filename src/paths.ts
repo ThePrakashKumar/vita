@@ -1,6 +1,6 @@
-// path helper function give us path based on the argument we pass
-// so later on we decided to change the path structure we don't have to manually go everywhere change we can just make the changes here
-const path = {
+// paths helper function give us paths based on the argument we pass
+// so later on we decided to change the paths structure we don't have to manually go everywhere change we can just make the changes here
+const paths = {
   home(): string {
     return "/";
   },
@@ -15,4 +15,4 @@ const path = {
   },
 };
 
-export default path;
+export default paths;
