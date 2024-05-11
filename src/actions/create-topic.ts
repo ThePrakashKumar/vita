@@ -62,9 +62,9 @@ export async function createTopic(
   // create topic
   let topic: Topic;
   try {
+    // when zod validation goes right we would get data
     topic = await db.topic.create({
       data: {
-        // when zod validation goes right we would get data
         slug: result.data.name,
         description: result.data.description,
       },
