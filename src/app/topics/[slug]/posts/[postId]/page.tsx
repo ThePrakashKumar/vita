@@ -3,6 +3,7 @@ import PostShow from "@/components/posts/PostShow";
 import paths from "@/paths";
 import { db } from "@/db";
 import { Post } from "@prisma/client";
+import CommentCreateForm from "@/components/comments/CommentCreateForm";
 
 interface PostShowPageProps {
   params: {
@@ -20,6 +21,7 @@ const PostPage = async ({ params }: PostShowPageProps) => {
         {"< "}Back to {slug}
       </Link>
       <PostShow postId={postId} />
+      <CommentCreateForm postId={postId} startOpen />
     </div>
   );
 };
