@@ -4,6 +4,8 @@ import paths from "@/paths";
 import { db } from "@/db";
 import { Post } from "@prisma/client";
 import CommentCreateForm from "@/components/comments/CommentCreateForm";
+import CommentList from "@/components/comments/CommentList";
+import { fetchCommentByPostId } from "@/db/queries/comment";
 
 interface PostShowPageProps {
   params: {
@@ -22,6 +24,7 @@ const PostPage = async ({ params }: PostShowPageProps) => {
       </Link>
       <PostShow postId={postId} />
       <CommentCreateForm postId={postId} startOpen />
+      <CommentList getCommentList={() => fetchCommentByPostId(postId)} />
     </div>
   );
 };
