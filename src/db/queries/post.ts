@@ -21,3 +21,21 @@ export const fetchPostBySlug = (slug: string): Promise<PostData[]> => {
     },
   });
 };
+
+export const fetchTopPost = (): Promise<PostData[]> => {
+  return db.post.findMany({
+    orderBy: [
+      {
+        comments: {
+          _count: "desc",
+        },
+      },
+    ],
+    include: {
+      topic: { select: { slug: true } },
+      user: { select: { name: true } },
+      _count: { select: { comments: true } },
+    },
+    take: 5,
+  });
+};
