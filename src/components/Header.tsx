@@ -7,6 +7,7 @@ import {
   Input,
 } from "@nextui-org/react";
 import HeaderAuth from "./HeaderAuth";
+import SearchBar from "./SearchBar";
 
 const Header = () => {
   return (
@@ -19,7 +20,7 @@ const Header = () => {
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
-          <Input type="input" label="" />
+          <SearchBar />
         </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end">
