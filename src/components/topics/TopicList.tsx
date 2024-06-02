@@ -6,7 +6,7 @@ import paths from "@/paths";
 const TopicList = async () => {
   const topics = await db.topic.findMany();
   const renderedTopicList = topics.map((topic) => (
-    <Link href={paths.topicShow(topic.slug)}>
+    <Link key={topic.slug} href={paths.topicShow(topic.slug)}>
       <Chip color="default" variant="shadow">
         {topic.slug}
       </Chip>
